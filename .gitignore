@@ -128,5 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 config.py
+config_w.py
 Error.log
 users.json
