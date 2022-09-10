@@ -51,6 +51,10 @@ def send_welcome(ctx):
         }]
     write_json('jsons/users.json', users)
 
+@bot.message_handler(commands=gif)
+def send_gif(ctx):
+    bot.send_animation(ctx.chat.id, animation=open('media/MTID.mp4', 'rb'))
+
 @bot.message_handler(commands=hel)
 def send_help(ctx):
     reply(ctx, f'''
@@ -151,43 +155,105 @@ def sent_teach_mass(ctx):
 
 @bot.message_handler(commands=math)
 def sent_math(ctx):
-    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_math, get_fio(str(g_math), 0), get_phone(str(g_math), 0), get_email(str(g_math), 0), get_vk(str(g_math), 0)))
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
+        g_math, 
+        get_fio(str(g_math), 0), 
+        get_phone(str(g_math), 0), 
+        get_email(str(g_math), 0), 
+        get_vk(str(g_math), 0)
+        ))
     
 @bot.message_handler(commands=cher4enie)
 def sent_cher(ctx):
-    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_cher4enie, get_fio(str(g_cher4enie), 0), get_phone(str(g_cher4enie), 0), get_email(str(g_cher4enie), 0), get_vk(str(g_cher4enie), 0)))
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
+        g_cher4enie, 
+        get_fio(str(g_cher4enie), 0), 
+        get_phone(str(g_cher4enie), 0), 
+        get_email(str(g_cher4enie), 0), 
+        get_vk(str(g_cher4enie), 0)
+        ))
 
-    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_cher4enie, get_fio(str(g_cher4enie), 1), get_phone(str(g_cher4enie), 1), get_email(str(g_cher4enie), 1), get_vk(str(g_cher4enie), 1)))
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
+        g_cher4enie, 
+        get_fio(str(g_cher4enie), 1), 
+        get_phone(str(g_cher4enie), 1), 
+        get_email(str(g_cher4enie), 1), 
+        get_vk(str(g_cher4enie), 1)
+        ))
 
-    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_cher4enie, get_fio(str(g_cher4enie), 2), get_phone(str(g_cher4enie), 2), get_email(str(g_cher4enie), 2), get_vk(str(g_cher4enie), 2)))
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
+        g_cher4enie, 
+        get_fio(str(g_cher4enie), 2), 
+        get_phone(str(g_cher4enie), 2), 
+        get_email(str(g_cher4enie), 2), 
+        get_vk(str(g_cher4enie), 2)
+        ))
     
 @bot.message_handler(commands=fizra)
 def sent_fizra(ctx):
-    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_fizra, get_fio(str(g_fizra), 0), get_phone(str(g_fizra), 0), get_email(str(g_fizra), 0), get_vk(str(g_fizra), 0)))
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
+        g_fizra, 
+        get_fio(str(g_fizra), 0), 
+        get_phone(str(g_fizra), 0), 
+        get_email(str(g_fizra), 0), 
+        get_vk(str(g_fizra), 0)
+        ))
 
-    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_fizra, get_fio(str(g_fizra), 1), get_phone(str(g_fizra), 1), get_email(str(g_fizra), 1), get_vk(str(g_fizra), 1)))
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
+        g_fizra, 
+        get_fio(str(g_fizra), 1), 
+        get_phone(str(g_fizra), 1), 
+        get_email(str(g_fizra), 1), 
+        get_vk(str(g_fizra), 1)
+        ))
     
 @bot.message_handler(commands=management)
 def sent_management(ctx):
-    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_management, get_fio(str(g_management), 0), get_phone(str(g_management), 0), get_email(str(g_management), 0), get_vk(str(g_management), 0)))
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
+        g_management, 
+        get_fio(str(g_management), 0), 
+        get_phone(str(g_management), 0), 
+        get_email(str(g_management), 0), 
+        get_vk(str(g_management), 0)
+        ))
     
 @bot.message_handler(commands=history)
 def sent_history(ctx):
-    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_history, get_fio(str(g_history), 0), get_phone(str(g_history), 0), get_email(str(g_history), 0), get_vk(str(g_history), 0)))
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
+        g_history, 
+        get_fio(str(g_history), 0), 
+        get_phone(str(g_history), 0), 
+        get_email(str(g_history), 0), 
+        get_vk(str(g_history), 0)
+        ))
     
 @bot.message_handler(commands=english)
 def sent_english(ctx):
-    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_english, get_fio(str(g_english), 0), get_phone(str(g_english), 0), get_email(str(g_english), 0), get_vk(str(g_english), 0)))
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
+        g_english, 
+        get_fio(str(g_english), 0), 
+        get_phone(str(g_english), 0), 
+        get_email(str(g_english), 0), 
+        get_vk(str(g_english), 0)
+        ))
 
-    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_english, get_fio(str(g_english), 1), get_phone(str(g_english), 1), get_email(str(g_english), 1), get_vk(str(g_english), 1)))
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
+        g_english, 
+        get_fio(str(g_english), 1), 
+        get_phone(str(g_english), 1), 
+        get_email(str(g_english), 1), 
+        get_vk(str(g_english), 1)
+        ))
     
 @bot.message_handler(commands=informatika)
 def sent_informatika(ctx):
-    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_informatika, get_fio(str(g_informatika), 0), get_phone(str(g_informatika), 0), get_email(str(g_informatika), 0), get_vk(str(g_informatika), 0)))
-
-@bot.message_handler(commands=gif)
-def send_gif(ctx):
-    bot.send_animation(ctx.chat.id, animation=open('media/MTID.mp4', 'rb'))
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
+        g_informatika, 
+        get_fio(str(g_informatika), 0), 
+        get_phone(str(g_informatika), 0), 
+        get_email(str(g_informatika), 0), 
+        get_vk(str(g_informatika), 0)
+        ))
 
 #======================================================================================================================#
 def telegram_polling():
