@@ -40,7 +40,7 @@ def get_vk(subject, num):
 @bot.message_handler(commands=st)
 def send_welcome(ctx):
 
-    reply(ctx, "Добро пожаловать, {0.first_name}!\nЯ - <b>{1.first_name}</b>, бот созданный чтобы помогать тебе ориентироваться по предметам в течении дня. Напиши /help для того, чтобы узнать мои возможности".format(ctx.from_user, bot.get_me()), parse_mode='html', reply_markup=welcome_key)
+    reply(ctx, "Добро пожаловать, {0.first_name}!\nЯ - <b>{1.first_name}</b>, бот созданный чтобы помогать тебе ориентироваться по предметам в течении дня.".format(ctx.from_user, bot.get_me()), parse_mode='html', reply_markup=welcome_key)
 
     users[str(ctx.from_user.id)] = [
         {
