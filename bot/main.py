@@ -46,8 +46,7 @@ def send_welcome(ctx):
         {
             "us_name": str(ctx.from_user.first_name) + str(ctx.from_user.last_name),
             "us_username": str(ctx.from_user.username),
-            "us_id": str(ctx.from_user.id),
-            "us_reg": int(0)
+            "us_id": str(ctx.from_user.id)
         }]
     write_json('jsons/users.json', users)
 
