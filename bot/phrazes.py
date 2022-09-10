@@ -1,4 +1,4 @@
-st = ['start', 'restart', 'старт', 'рестарт']
+st = ['start', 'restart', 'старт', 'рестарт', 'reload']
 hel = ['help', 'хелп']
 tom = ['tomorrow', 'завтра', 'Завтра']
 tod = ['today', 'сегодня', 'Сегодня']
