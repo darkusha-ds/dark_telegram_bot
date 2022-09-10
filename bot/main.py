@@ -3,11 +3,15 @@ from datetime import date as dt
 from datetime import time as tm
 from admin import *
 import telebot as tg
+from telebot import *
+from phrazes import *
+from keyboards import *
 
 bot = tg.TeleBot(config.token)
 
 users = load_json('jsons/users.json')
 lessons = load_json('jsons/lessons.json')
+teacher = load_json('jsons/teachers.json')
 
 #=====================================================SHORT  NAMES=====================================================#
 
@@ -19,38 +23,37 @@ def get_day(week_num, day):
         res = t[str(day)]
     return ''.join(res)
 
-hel = ['help', 'хелп']
-tom = ['tomorrow', 'завтра', 'Завтра']
-tod = ['today', 'сегодня', 'Сегодня']
-yest = ['yesterday', 'вчера', 'Вчера']
-calls = ['calls', 'звонки']
-full = ['full', 'Фулл расписание', 'фулл расписание', 'Фулл', 'фулл']
-c1 = ['Нечетная', 'нечетная', 'odd']
-c2 = ['Четная', 'четная', 'even']
-nxt = ['Следующая неделя', 'следующая неделя', 'next']
+def get_fio(subject, num):
+    return teacher[str(subject)][num]["ФИО"]
+
+def get_phone(subject, num):
+    return teacher[str(subject)][num]["Номер телефона"]
+
+def get_email(subject, num):
+    return teacher[str(subject)][num]["email"]
+
+def get_vk(subject, num):
+    return teacher[str(subject)][num]["VK"]
 
 #============================================ALL COMMANDS FOR SEND MESSAGES============================================#
 
-@bot.message_handler(commands=['start'])
-def send_welcome(message):
-    reply(message, "Добро пожаловать, {0.first_name}!\nЯ - <b>{1.first_name}</b>, бот созданный чтобы помогать тебе ориентироваться по предметам в течении дня. Напиши /help для того, чтобы узнать мои возможности".format(message.from_user, bot.get_me()), parse_mode='html')
-    user_id = message.from_user.id
-    user_first_name = message.from_user.first_name
-    user_last_name = message.from_user.last_name
-    user_name = message.from_user.username
+@bot.message_handler(commands=st)
+def send_welcome(ctx):
 
-    users[str(message.from_user.id)] = [
+    reply(ctx, "Добро пожаловать, {0.first_name}!\nЯ - <b>{1.first_name}</b>, бот созданный чтобы помогать тебе ориентироваться по предметам в течении дня. Напиши /help для того, чтобы узнать мои возможности".format(ctx.from_user, bot.get_me()), parse_mode='html', reply_markup=welcome_key)
+
+    users[str(ctx.from_user.id)] = [
         {
-            "us_name": str(user_first_name) + str(user_last_name),
-            "us_username": str(user_name),
-            "us_id": str(user_id),
+            "us_name": str(ctx.from_user.first_name) + str(ctx.from_user.last_name),
+            "us_username": str(ctx.from_user.username),
+            "us_id": str(ctx.from_user.id),
             "us_reg": int(0)
         }]
     write_json('jsons/users.json', users)
 
 @bot.message_handler(commands=hel)
-def send_help(message):
-    reply(message, f'''
+def send_help(ctx):
+    reply(ctx, f'''
     Мои команды:
     /вчера - расписание на вчерашний день
     /сегодня - расписание на сегодня
@@ -63,7 +66,7 @@ def send_help(message):
     ''' )
 
 @bot.message_handler(commands=tod)
-def send_today(message):
+def send_today(ctx):
     today = dt.today().weekday()
     week_now = dt.today().isocalendar().week
     yesterday = today - 1
@@ -74,11 +77,11 @@ def send_today(message):
         week_now = week_now + 1
     if yesterday < 0: yesterday = 0
 
-    if week_now % 2 == 0: reply(message, get_day("четная", today))
-    else: reply(message, get_day("нечетная", today))
+    if week_now % 2 == 0: reply(ctx, get_day("четная", today))
+    else: reply(ctx, get_day("нечетная", today))
 
 @bot.message_handler(commands=tom)
-def send_tomorrow(message):
+def send_tomorrow(ctx):
     today = dt.today().weekday()
     week_now = dt.today().isocalendar().week
     yesterday = today - 1
@@ -89,11 +92,11 @@ def send_tomorrow(message):
         week_now = week_now + 1
     if yesterday < 0: yesterday = 0
     
-    if week_now % 2 == 0: reply(message, get_day("четная", tomorrow))
-    else: reply(message, get_day("нечетная", tomorrow))
+    if week_now % 2 == 0: reply(ctx, get_day("четная", tomorrow))
+    else: reply(ctx, get_day("нечетная", tomorrow))
 
 @bot.message_handler(commands=yest)
-def send_yesterday(message):
+def send_yesterday(ctx):
     today = dt.today().weekday()
     week_now = dt.today().isocalendar().week
     yesterday = today - 1
@@ -104,34 +107,87 @@ def send_yesterday(message):
         week_now = week_now + 1
     if yesterday < 0: yesterday = 0
     
-    if week_now % 2 == 0: reply(message, get_day("четная", yesterday))
-    else: reply(message, get_day("нечетная", yesterday))
+    if week_now % 2 == 0: reply(ctx, get_day("четная", yesterday))
+    else: reply(ctx, get_day("нечетная", yesterday))
 
 @bot.message_handler(commands=calls)
-def send_call(message):
-    reply(message, ''.join(lessons["звонки"]))
+def send_call(ctx):
+    reply(ctx, ''.join(lessons["звонки"]))
 
 @bot.message_handler(commands=full)
-def send_full(message):
-    reply(message, full_1)
-    reply(message, full_2)
+def send_full(ctx):
+    reply(ctx, full_1)
+    reply(ctx, full_2)
 
 @bot.message_handler(commands=c1)
-def send_odd(message):
-    reply(message, full_2)
+def send_odd(ctx):
+    reply(ctx, full_2)
 
 @bot.message_handler(commands=c2)
-def send_even(message):
-    reply(message, full_1)
+def send_even(ctx):
+    reply(ctx, full_1)
 
 @bot.message_handler(commands=nxt)
-def send_nxt(message):
+def send_nxt(ctx):
     week_now = dt.today().isocalendar().week
     
-    if week_now % 2 == 0: reply(message, full_2)
-    else: reply(message, full_1)
+    if week_now % 2 == 0: reply(ctx, full_2)
+    else: reply(ctx, full_1)
     
+@bot.message_handler(commands=nw)
+def send_now(ctx):
+    week_now = dt.today().isocalendar().week
+    
+    if week_now % 2 == 0: reply(ctx, full_1)
+    else: reply(ctx, full_2)
 
+@bot.message_handler(commands=back)
+def send_back(ctx):
+    reply(ctx, 'Вы вернулись в главное меню', reply_markup=welcome_key)
+
+@bot.message_handler(commands=teachers)
+def sent_teach_mass(ctx):
+    send(ctx.chat.id, "Выберите нужного преподавателя из списка", reply_markup=teachers_key)
+
+@bot.message_handler(commands=math)
+def sent_math(ctx):
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_math, get_fio(str(g_math), 0), get_phone(str(g_math), 0), get_email(str(g_math), 0), get_vk(str(g_math), 0)))
+    
+@bot.message_handler(commands=cher4enie)
+def sent_cher(ctx):
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_cher4enie, get_fio(str(g_cher4enie), 0), get_phone(str(g_cher4enie), 0), get_email(str(g_cher4enie), 0), get_vk(str(g_cher4enie), 0)))
+
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_cher4enie, get_fio(str(g_cher4enie), 1), get_phone(str(g_cher4enie), 1), get_email(str(g_cher4enie), 1), get_vk(str(g_cher4enie), 1)))
+
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_cher4enie, get_fio(str(g_cher4enie), 2), get_phone(str(g_cher4enie), 2), get_email(str(g_cher4enie), 2), get_vk(str(g_cher4enie), 2)))
+    
+@bot.message_handler(commands=fizra)
+def sent_fizra(ctx):
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_fizra, get_fio(str(g_fizra), 0), get_phone(str(g_fizra), 0), get_email(str(g_fizra), 0), get_vk(str(g_fizra), 0)))
+
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_fizra, get_fio(str(g_fizra), 1), get_phone(str(g_fizra), 1), get_email(str(g_fizra), 1), get_vk(str(g_fizra), 1)))
+    
+@bot.message_handler(commands=management)
+def sent_management(ctx):
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_management, get_fio(str(g_management), 0), get_phone(str(g_management), 0), get_email(str(g_management), 0), get_vk(str(g_management), 0)))
+    
+@bot.message_handler(commands=history)
+def sent_history(ctx):
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_history, get_fio(str(g_history), 0), get_phone(str(g_history), 0), get_email(str(g_history), 0), get_vk(str(g_history), 0)))
+    
+@bot.message_handler(commands=english)
+def sent_english(ctx):
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_english, get_fio(str(g_english), 0), get_phone(str(g_english), 0), get_email(str(g_english), 0), get_vk(str(g_english), 0)))
+
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_english, get_fio(str(g_english), 1), get_phone(str(g_english), 1), get_email(str(g_english), 1), get_vk(str(g_english), 1)))
+    
+@bot.message_handler(commands=informatika)
+def sent_informatika(ctx):
+    send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(g_informatika, get_fio(str(g_informatika), 0), get_phone(str(g_informatika), 0), get_email(str(g_informatika), 0), get_vk(str(g_informatika), 0)))
+
+@bot.message_handler(commands=gif)
+def send_gif(ctx):
+    bot.send_animation(ctx.chat.id, animation=open('media/MTID.mp4', 'rb'))
 
 #======================================================================================================================#
 def telegram_polling():
