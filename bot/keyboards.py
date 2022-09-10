@@ -3,8 +3,8 @@ from phrazes import *
 
 welcome_key = types.ReplyKeyboardMarkup(resize_keyboard=True)
 welcome0  = types.KeyboardButton('/рестарт')
-welcome1  = types.KeyboardButton('/хелп')
-welcome2 = types.KeyboardButton('/gif')
+welcome1 = types.KeyboardButton('/gif')
+welcome2 = types.KeyboardButton('/преподы')
 welcome3  = types.KeyboardButton('/сегодня')
 welcome4  = types.KeyboardButton('/завтра')
 welcome5  = types.KeyboardButton('/вчера')
@@ -14,9 +14,8 @@ welcome8  = types.KeyboardButton('/нечетная')
 welcome9  = types.KeyboardButton('/четная')
 welcome10  = types.KeyboardButton('/next')
 welcome11 = types.KeyboardButton('/now')
-welcome12 = types.KeyboardButton('/преподаватели')
 
-welcome_key.add(welcome0, welcome1, welcome2, welcome3, welcome4, welcome5, welcome6, welcome7, welcome8, welcome9, welcome10, welcome11, welcome12)
+welcome_key.add(welcome0, welcome1, welcome2, welcome3, welcome4, welcome5, welcome6, welcome7, welcome8, welcome9, welcome10, welcome11)
 
 
 teachers_key = types.ReplyKeyboardMarkup(resize_keyboard=True)
