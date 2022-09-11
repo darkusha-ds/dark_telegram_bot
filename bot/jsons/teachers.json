@@ -4,7 +4,8 @@
             "ФИО": "Третьякова Нина Гермоновна",
             "Номер телефона": "-",
             "email": "-",
-            "VK": "-"
+            "VK": "-",
+            "link": "https://pstu.ru/basic/glossary/staff/?sid=1061"
         }
     ],
     "Черчение": [
@@ -12,19 +13,22 @@
             "ФИО": "Феоктистова Екатерина Валерьевна",
             "Номер телефона": "-",
             "email": "-",
-            "VK": "https://vk.com/ekaterina_savkina"
+            "VK": "https://vk.com/ekaterina_savkina",
+            "link": "https://pstu.ru/basic/glossary/staff/?sid=-2277"
         },
         {
             "ФИО": "Тарасова Любовь Сергеевна",
             "Номер телефона": "-",
             "email": "-",
-            "VK": "https://vk.com/liebetarasova"
+            "VK": "https://vk.com/liebetarasova",
+            "link": "https://pstu.ru/basic/glossary/staff/?sid=-118"
         },
         {
             "ФИО": "Дианова Юлия Викторовна",
             "Номер телефона": "-",
             "email": "-",
-            "VK": "-"
+            "VK": "-",
+            "link": "https://pstu.ru/basic/glossary/staff/?sid=-2068"
         }
     ],
     "Физ-ра": [
@@ -32,13 +36,15 @@
             "ФИО": "Паластрова Дарья Дмитриевна",
             "Номер телефона": "-",
             "email": "-",
-            "VK": "https://vk.com/dashan23"
+            "VK": "https://vk.com/dashan23",
+            "link": "Отсутствует"
         },
         {
             "ФИО": "Паначев Валерий Дмитриевич",
             "Номер телефона": "-",
             "email": "-",
-            "VK": "-"
+            "VK": "-",
+            "link": "https://pstu.ru/basic/glossary/staff/?sid=382"
         }
     ],
     "Менеджмент": [
@@ -46,7 +52,8 @@
             "ФИО": "Мыльникова Елена Михайловна",
             "Номер телефона": "+79223329292",
             "email": "elenamm152@yandex.ru",
-            "VK": "-"
+            "VK": "-",
+            "link": "https://pstu.ru/basic/glossary/staff/?sid=90"
         }
     ],
     "История": [
@@ -54,7 +61,8 @@
             "ФИО": "Колдушко Анна Анатольевна",
             "Номер телефона": "-",
             "email": "koldushko@mail.ru",
-            "VK": "-"
+            "VK": "-",
+            "link": "https://pstu.ru/basic/glossary/staff/?sid=418"
         }
     ],
     "Английский язык": [
@@ -62,21 +70,24 @@
             "ФИО": "Вершинина Мария Геннадьевна",
             "Номер телефона": "-",
             "email": "-",
-            "VK": "https://vk.com/ver_mg"
+            "VK": "https://vk.com/ver_mg",
+            "link": "https://pstu.ru/basic/glossary/staff/?sid=-1270"
         },
         {
             "ФИО": "Катаева Екатерина Георгиевна",
             "Номер телефона": "-",
             "email": "-",
-            "VK": "https://vk.com/id12675276"
+            "VK": "https://vk.com/id12675276",
+            "link": "https://pstu.ru/basic/glossary/staff/?sid=-2206"
         }
     ],
     "Информатика": [
         {
-            "ФИО": "Бельмас С.М",
+            "ФИО": "Бельмас Светлана Михайловна",
             "Номер телефона": "-",
             "email": "-",
-            "VK": "-"
+            "VK": "-",
+            "link": "https://pstu.ru/basic/glossary/staff/?sid=-1931"
         }
     ]
 }

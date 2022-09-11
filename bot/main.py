@@ -1,10 +1,7 @@
-import traceback, time, config, json
+import traceback, time, config
 from datetime import date as dt
-from datetime import time as tm
 from admin import *
 import telebot as tg
-from telebot import *
-from phrazes import *
 from keyboards import *
 
 bot = tg.TeleBot(config.token)
@@ -37,7 +34,7 @@ def get_vk(subject, num):
 
 #============================================ALL COMMANDS FOR SEND MESSAGES============================================#
 
-@bot.message_handler(commands=st)
+@bot.message_handler(commands=start)
 def send_welcome(ctx):
 
     reply(ctx, "Добро пожаловать, {0.first_name}!\nЯ - <b>{1.first_name}</b>, бот созданный чтобы помогать тебе ориентироваться по предметам в течении дня.".format(ctx.from_user, bot.get_me()), parse_mode='html', reply_markup=welcome_key)
@@ -54,7 +51,7 @@ def send_welcome(ctx):
 def send_gif(ctx):
     bot.send_animation(ctx.chat.id, animation=open('media/MTID.mp4', 'rb'))
 
-@bot.message_handler(commands=hel)
+@bot.message_handler(commands=help)
 def send_help(ctx):
     reply(ctx, f'''
     Мои команды:
