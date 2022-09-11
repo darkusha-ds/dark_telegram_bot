@@ -32,6 +32,9 @@ def get_email(subject, num):
 def get_vk(subject, num):
     return teacher[str(subject)][num]["VK"]
 
+def get_link(subject, num):
+    return teacher[str(subject)][num]["link"]
+
 #============================================ALL COMMANDS FOR SEND MESSAGES============================================#
 
 @bot.message_handler(commands=start)
@@ -156,7 +159,8 @@ def sent_math(ctx):
         get_fio(str(g_math), 0), 
         get_phone(str(g_math), 0), 
         get_email(str(g_math), 0), 
-        get_vk(str(g_math), 0)
+        get_vk(str(g_math), 0), 
+        get_link(str(g_math), 0)
         ))
     
 @bot.message_handler(commands=cher4enie)
@@ -166,7 +170,8 @@ def sent_cher(ctx):
         get_fio(str(g_cher4enie), 0), 
         get_phone(str(g_cher4enie), 0), 
         get_email(str(g_cher4enie), 0), 
-        get_vk(str(g_cher4enie), 0)
+        get_vk(str(g_cher4enie), 0), 
+        get_link(str(g_cher4enie), 0)
         ))
 
     send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
@@ -174,7 +179,8 @@ def sent_cher(ctx):
         get_fio(str(g_cher4enie), 1), 
         get_phone(str(g_cher4enie), 1), 
         get_email(str(g_cher4enie), 1), 
-        get_vk(str(g_cher4enie), 1)
+        get_vk(str(g_cher4enie), 1), 
+        get_link(str(g_cher4enie), 1)
         ))
 
     send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
@@ -182,7 +188,8 @@ def sent_cher(ctx):
         get_fio(str(g_cher4enie), 2), 
         get_phone(str(g_cher4enie), 2), 
         get_email(str(g_cher4enie), 2), 
-        get_vk(str(g_cher4enie), 2)
+        get_vk(str(g_cher4enie), 2), 
+        get_link(str(g_cher4enie), 2)
         ))
     
 @bot.message_handler(commands=fizra)
@@ -192,7 +199,8 @@ def sent_fizra(ctx):
         get_fio(str(g_fizra), 0), 
         get_phone(str(g_fizra), 0), 
         get_email(str(g_fizra), 0), 
-        get_vk(str(g_fizra), 0)
+        get_vk(str(g_fizra), 0), 
+        get_link(str(g_fizra), 0)
         ))
 
     send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
@@ -200,7 +208,8 @@ def sent_fizra(ctx):
         get_fio(str(g_fizra), 1), 
         get_phone(str(g_fizra), 1), 
         get_email(str(g_fizra), 1), 
-        get_vk(str(g_fizra), 1)
+        get_vk(str(g_fizra), 1), 
+        get_link(str(g_fizra), 1)
         ))
     
 @bot.message_handler(commands=management)
@@ -210,7 +219,8 @@ def sent_management(ctx):
         get_fio(str(g_management), 0), 
         get_phone(str(g_management), 0), 
         get_email(str(g_management), 0), 
-        get_vk(str(g_management), 0)
+        get_vk(str(g_management), 0), 
+        get_link(str(g_management), 0)
         ))
     
 @bot.message_handler(commands=history)
@@ -220,7 +230,8 @@ def sent_history(ctx):
         get_fio(str(g_history), 0), 
         get_phone(str(g_history), 0), 
         get_email(str(g_history), 0), 
-        get_vk(str(g_history), 0)
+        get_vk(str(g_history), 0), 
+        get_link(str(g_history), 0)
         ))
     
 @bot.message_handler(commands=english)
@@ -230,7 +241,8 @@ def sent_english(ctx):
         get_fio(str(g_english), 0), 
         get_phone(str(g_english), 0), 
         get_email(str(g_english), 0), 
-        get_vk(str(g_english), 0)
+        get_vk(str(g_english), 0), 
+        get_link(str(g_english), 0)
         ))
 
     send(ctx.chat.id, "{0}\n\nФИО: {1}\nНомер телефона: {2}\nemail: {3}\nVK: {4}".format(\
@@ -238,7 +250,8 @@ def sent_english(ctx):
         get_fio(str(g_english), 1), 
         get_phone(str(g_english), 1), 
         get_email(str(g_english), 1), 
-        get_vk(str(g_english), 1)
+        get_vk(str(g_english), 1), 
+        get_link(str(g_english), 1)
         ))
     
 @bot.message_handler(commands=informatika)
@@ -248,7 +261,8 @@ def sent_informatika(ctx):
         get_fio(str(g_informatika), 0), 
         get_phone(str(g_informatika), 0), 
         get_email(str(g_informatika), 0), 
-        get_vk(str(g_informatika), 0)
+        get_vk(str(g_informatika), 0), 
+        get_link(str(g_informatika), 0)
         ))
 
 #======================================================================================================================#
