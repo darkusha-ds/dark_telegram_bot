@@ -15,7 +15,20 @@ welcome9  = types.KeyboardButton('/четная')
 welcome10  = types.KeyboardButton('/next')
 welcome11 = types.KeyboardButton('/now')
 
-welcome_key.add(welcome0, welcome1, welcome2, welcome3, welcome4, welcome5, welcome6, welcome7, welcome8, welcome9, welcome10, welcome11)
+welcome_key.add(
+    welcome0, 
+    welcome1, 
+    welcome2, 
+    welcome3, 
+    welcome4, 
+    welcome5, 
+    welcome6, 
+    welcome7, 
+    welcome8, 
+    welcome9, 
+    welcome10,
+    welcome11
+)
 
 
 teachers_key = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -27,4 +40,13 @@ teachers4 = types.KeyboardButton('/{}'.format(g_management))
 teachers5 = types.KeyboardButton('/{}'.format(g_history))
 teachers6 = types.KeyboardButton('/{}'.format(g_english))
 teachers7 = types.KeyboardButton('/{}'.format(g_informatika))
-teachers_key.add(teachers0, teachers1, teachers2, teachers3, teachers4, teachers5, teachers6, teachers7)
+teachers_key.add(
+    teachers0, 
+    teachers1, 
+    teachers2, 
+    teachers3, 
+    teachers4, 
+    teachers5, 
+    teachers6, 
+    teachers7
+)
