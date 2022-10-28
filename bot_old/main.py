@@ -8,7 +8,6 @@ bot = tg.TeleBot(config.token)
 
 users = load_json('jsons/users.json')
 lessons = load_json('jsons/lessons.json')
-lessons_1 = load_json('jsons/lessons_new.json')
 teacher = load_json('jsons/teachers.json')
 
 #=====================================================SHORT  NAMES=====================================================#
