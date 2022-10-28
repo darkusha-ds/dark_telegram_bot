@@ -1,3 +1,3 @@
 #!/bin/sh
 
-cd bot/ && python3 -B main.py
+cd bot/ && python3 -B app.py

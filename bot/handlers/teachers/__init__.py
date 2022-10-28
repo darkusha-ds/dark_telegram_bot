@@ -1,0 +1,1 @@
+from . import math, cherchenie, fizra, management, history, english, informatika
