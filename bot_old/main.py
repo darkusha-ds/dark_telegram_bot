@@ -1,10 +1,10 @@
-import traceback, time, config
+import traceback, time, config_w
 from datetime import date as dt
 from admin import *
 import telebot as tg
 from keyboards import *
 
-bot = tg.TeleBot(config.token)
+bot = tg.TeleBot(config_w.token)
 
 users = load_json('jsons/users.json')
 lessons = load_json('jsons/lessons.json')
