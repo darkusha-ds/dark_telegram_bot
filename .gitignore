@@ -127,6 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-config_w.py
+bot_old/
 Error.log
 users.json
