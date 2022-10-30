@@ -1,6 +1,6 @@
 start = ['start', 'restart', 'старт', 'рестарт', 'reload']
 help = ['help', 'хелп']
-call = ['calls', 'звонки']
+calls = ['calls', 'звонки']
 teachers = ['Преподы', 'преподы', 'Преподаватели', 'преподаватели', 'teachers']
 gif = ['gif', 'mtid', 'гиф', 'мтид']
 back = ['back', 'назад', 'вернуться']

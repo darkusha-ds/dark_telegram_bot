@@ -6,6 +6,6 @@ from utils.phrazes import *
 from utils.func import *
 
 
-@dp.message_handler(commands=call)
+@dp.message_handler(commands=['звонки'])
 async def calls(message: types.Message):
     await message.answer(''.join(lessons_default["звонки"]))
