@@ -24,6 +24,11 @@ g_history = 'История'
 g_english = 'Английский язык'
 g_informatika = 'Информатика'
 
+example = 'example'
+
+even_wk = 'четная'
+odd_wk = 'нечетная'
+
 # TO REVERSE
 
 tom = ['tomorrow', 'завтра', 'Завтра']

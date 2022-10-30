@@ -8,4 +8,4 @@ from utils.func import *
 
 @dp.message_handler(commands=callss)
 async def calls(message: types.Message):
-    await message.answer(''.join(lessons_default["звонки"]))
+    await message.answer(''.join(calls_json["звонки"]))

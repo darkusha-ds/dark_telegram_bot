@@ -17,6 +17,11 @@ async def yesterday(message: types.Message):
     if tomorrow >= 7: 
         tomorrow = 0
         week_now = week_now + 1
+ 
+    if today == 0:
+        yesterday = 6
+        week_now = week_now - 1
+
     if yesterday < 0: yesterday = 0
 
     if week_now % 2 == 0:  await message.answer(get_day_default("четная", yesterday))

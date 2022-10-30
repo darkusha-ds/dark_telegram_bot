@@ -24,11 +24,11 @@ welcome_key.add(
     welcome_4, 
     welcome_5, 
     welcome_6, 
-    # welcome_7, 
-    # welcome_8, 
-    # welcome_9, 
-    # welcome_10,
-    # welcome_11
+    welcome_7, 
+    welcome_8, 
+    welcome_9, 
+    welcome_10,
+    welcome_11
 )
 
 
