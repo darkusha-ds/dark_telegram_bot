@@ -7,7 +7,7 @@ from utils.phrazes import *
 from utils.func import *
 
 
-@dp.message_handler(commands=["tomorrow"])
+@dp.message_handler(commands=tom)
 async def tomorrow(message: types.Message):
     today = dt.today().weekday()
     week_now = dt.today().isocalendar().week
