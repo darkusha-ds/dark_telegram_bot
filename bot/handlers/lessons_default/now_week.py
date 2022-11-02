@@ -17,3 +17,5 @@ async def now_week(message: types.Message):
 
     if week_now % 2 == 0: await message.answer(even_week)
     else: await message.answer(odd_week)
+
+    reg_users(message)

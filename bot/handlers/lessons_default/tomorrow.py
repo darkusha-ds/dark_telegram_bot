@@ -25,3 +25,5 @@ async def tomorrow(message: types.Message):
         
     if week_now % 2 == 0:  await message.answer(get_day_default("четная", tomorrow))
     else: await message.answer(get_day_default("нечетная", tomorrow))
+
+    reg_users(message)

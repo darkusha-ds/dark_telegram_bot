@@ -25,3 +25,5 @@ async def today(message: types.Message):
         
     if week_now % 2 == 0:  await message.answer(get_day_default("четная", today))
     else: await message.answer(get_day_default("нечетная", today))
+
+    reg_users(message)

@@ -12,3 +12,5 @@ async def management(message: types.Message):
         await message.answer("Извините, вы находитесь в черном списке. Если вы считаете что попали туда ошибочно, напишите создателю: @darkusha_ds")
         return
     await message.answer(get_teacher(str(g_management), 0))
+
+    reg_users(message)

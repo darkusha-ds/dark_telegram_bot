@@ -13,3 +13,5 @@ async def fizra(message: types.Message):
         return
     await message.answer(get_teacher(str(g_fizra), 0))
     await message.answer(get_teacher(str(g_fizra), 1))
+
+    reg_users(message)

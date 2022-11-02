@@ -12,3 +12,5 @@ async def commands(message: types.Message):
         await message.answer("Извините, вы находитесь в черном списке. Если вы считаете что попали туда ошибочно, напишите создателю: @darkusha_ds")
         return
     await message.answer("Test commands")
+
+    reg_users(message)

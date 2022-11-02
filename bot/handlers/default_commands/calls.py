@@ -12,3 +12,5 @@ async def calls(message: types.Message):
         await message.answer("Извините, вы находитесь в черном списке. Если вы считаете что попали туда ошибочно, напишите создателю: @darkusha_ds")
         return
     await message.answer(''.join(calls_json["звонки"]))
+
+    reg_users(message)

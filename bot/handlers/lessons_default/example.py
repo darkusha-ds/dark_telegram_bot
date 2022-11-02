@@ -12,3 +12,5 @@ async def example(message: types.Message):
         await message.answer("Извините, вы находитесь в черном списке. Если вы считаете что попали туда ошибочно, напишите создателю: @darkusha_ds")
         return
     await message.answer('adklf')
+
+    reg_users(message)

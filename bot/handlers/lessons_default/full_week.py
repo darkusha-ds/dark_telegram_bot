@@ -14,3 +14,5 @@ async def full_week(message: types.Message):
         return
     await message.answer(even_week)
     await message.answer(odd_week)
+
+    reg_users(message)

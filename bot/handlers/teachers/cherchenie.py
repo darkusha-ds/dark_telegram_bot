@@ -14,3 +14,5 @@ async def cher4enie(message: types.Message):
     await message.answer(get_teacher(str(g_cher4enie), 0))
     await message.answer(get_teacher(str(g_cher4enie), 1))
     await message.answer(get_teacher(str(g_cher4enie), 2))
+
+    reg_users(message)

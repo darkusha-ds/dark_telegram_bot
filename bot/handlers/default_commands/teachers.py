@@ -12,3 +12,5 @@ async def teachers(message: types.Message):
         await message.answer("Извините, вы находитесь в черном списке. Если вы считаете что попали туда ошибочно, напишите создателю: @darkusha_ds")
         return
     await message.answer("Выберите нужного преподавателя из списка", reply_markup=teachers_key)
+
+    reg_users(message)

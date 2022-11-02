@@ -17,3 +17,5 @@ async def next_week(message: types.Message):
 
     if week_now % 2 == 0: await message.answer(odd_week)
     else: await message.answer(even_week)
+
+    reg_users(message)

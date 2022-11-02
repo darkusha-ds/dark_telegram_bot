@@ -42,3 +42,12 @@ def get_day_first(week_num, day):
     for t in lessons_first[str(week_num)]:
         res = t[str(day)]
     return ''.join(res)
+
+def reg_users(ctx):
+    users[str(ctx.from_user.id)] = [
+        {
+            "us_name": str(ctx.from_user.first_name) + str(ctx.from_user.last_name),
+            "us_username": str(ctx.from_user.username),
+            "us_id": str(ctx.from_user.id)
+        }]
+    write_json('data/jsons/users.json', users)

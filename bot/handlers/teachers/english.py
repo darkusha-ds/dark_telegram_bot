@@ -13,3 +13,5 @@ async def english(message: types.Message):
         return
     await message.answer(get_teacher(str(g_english), 0))
     await message.answer(get_teacher(str(g_english), 1))
+
+    reg_users(message)

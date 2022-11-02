@@ -13,3 +13,5 @@ async def even_week_s(message: types.Message):
         await message.answer("Извините, вы находитесь в черном списке. Если вы считаете что попали туда ошибочно, напишите создателю: @darkusha_ds")
         return
     await message.answer(even_week)
+
+    reg_users(message)

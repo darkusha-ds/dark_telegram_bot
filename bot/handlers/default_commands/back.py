@@ -12,3 +12,5 @@ async def back(message: types.Message):
         await message.answer("Извините, вы находитесь в черном списке. Если вы считаете что попали туда ошибочно, напишите создателю: @darkusha_ds")
         return
     await message.answer('Вы вернулись в главное меню', reply_markup=welcome_key)
+
+    reg_users(message)
