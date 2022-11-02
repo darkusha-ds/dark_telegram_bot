@@ -46,7 +46,7 @@ def get_day_first(week_num, day):
 def reg_users(ctx):
     users[str(ctx.from_user.id)] = [
         {
-            "us_name": str(ctx.from_user.first_name) + str(ctx.from_user.last_name),
+            "us_name": str(ctx.from_user.first_name) + "_" + str(ctx.from_user.last_name),
             "us_username": str(ctx.from_user.username),
             "us_id": str(ctx.from_user.id)
         }]
