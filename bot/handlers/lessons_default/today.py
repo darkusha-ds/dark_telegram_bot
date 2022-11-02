@@ -19,5 +19,9 @@ async def today(message: types.Message):
         week_now = week_now + 1
     if yesterday < 0: yesterday = 0
 
+    if str(message.from_user.id) in block_user["blocked"]:
+        await message.answer("Извините, вы находитесь в черном списке. Если вы считаете что попали туда ошибочно, напишите создателю: @darkusha_ds")
+        return
+        
     if week_now % 2 == 0:  await message.answer(get_day_default("четная", today))
     else: await message.answer(get_day_default("нечетная", today))

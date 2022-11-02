@@ -10,7 +10,11 @@ def write_json(filename, content):
         json.dump(content, outfile, ensure_ascii=False, indent=4)
 
 
+# with open('data/blocked_users.py', 'r') as fd:
+#     block_user = fd.read()
+
 users = load_json('data/jsons/users.json')
+block_user = load_json('data/jsons/blocked_users.json')
 teacher = load_json('data/jsons/teachers.json')
 
 lessons_default = load_json('data/jsons/lessons.json')
