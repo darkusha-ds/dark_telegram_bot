@@ -8,7 +8,7 @@ from utils.func import *
 
 @dp.message_handler(commands=['admin'])
 async def admin(message: types.Message):
-    if str(message.from_user.id) == "1453000194":
+    if str(message.from_user.id) == ["1453000194", "411175364"]:
         await message.answer(users)
         return
     await message.answer("Извините, вы не создатель данного бота")
