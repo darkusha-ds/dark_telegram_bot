@@ -49,5 +49,6 @@ def reg_users(ctx):
             "us_name": str(ctx.from_user.first_name) + "_" + str(ctx.from_user.last_name),
             "us_username": str(ctx.from_user.username),
             "us_id": str(ctx.from_user.id)
-        }]
+        }
+    ]
     write_json('data/jsons/users.json', users)

@@ -41,16 +41,24 @@ teachers_4 = types.KeyboardButton('/{}'.format(g_management))
 teachers_5 = types.KeyboardButton('/{}'.format(g_history))
 teachers_6 = types.KeyboardButton('/{}'.format(g_english))
 teachers_7 = types.KeyboardButton('/{}'.format(g_informatika))
+teachers_8 = types.KeyboardButton('/{}'.format(g_filosof))
+teachers_9 = types.KeyboardButton('/{}'.format(g_fizika))
+teachers_10 = types.KeyboardButton('/{}'.format(g_algoritm))
+teachers_11 = types.KeyboardButton('/{}'.format(g_uir))
 
 teachers_key.add(
     teachers_0, 
     teachers_1, 
-    teachers_2, 
+    # teachers_2, 
     teachers_3, 
     teachers_4, 
-    teachers_5, 
+    # teachers_5, 
     teachers_6, 
-    teachers_7
+    # teachers_7, 
+    teachers_8, 
+    teachers_9, 
+    teachers_10, 
+    teachers_11
 )
 
 new_week_key = types.ReplyKeyboardMarkup(resize_keyboard=True)

@@ -1,1 +1,1 @@
-from . import math, cherchenie, fizra, management, history, english, informatika
+from . import math, cherchenie, fizra, management, history, english, informatika, filosof, fizika, algoritm, uir

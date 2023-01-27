@@ -12,6 +12,5 @@ async def fizra(message: types.Message):
         await message.answer("Извините, вы находитесь в черном списке. Если вы считаете что попали туда ошибочно, напишите создателю: @darkusha_ds")
         return
     await message.answer(get_teacher(str(g_fizra), 0))
-    await message.answer(get_teacher(str(g_fizra), 1))
 
     reg_users(message)
