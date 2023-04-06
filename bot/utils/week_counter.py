@@ -9,6 +9,8 @@ even_week = f'''
 {get_day_default(even_wk, 2)}
 {get_day_default(even_wk, 3)}
 {get_day_default(even_wk, 4)}
+{get_day_default(even_wk, 5)}
+{get_day_default(even_wk, 6)}
 '''
 
 odd_week = f'''
@@ -19,4 +21,6 @@ odd_week = f'''
 {get_day_default(odd_wk, 2)}
 {get_day_default(odd_wk, 3)}
 {get_day_default(odd_wk, 4)}
+{get_day_default(odd_wk, 5)}
+{get_day_default(odd_wk, 6)}
 '''

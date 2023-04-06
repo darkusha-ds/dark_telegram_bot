@@ -1,4 +1,9 @@
 import json
+from datetime import date
+from datetime import datetime as dt
+
+import pytz
+curr_time = pytz.timezone('Asia/Yekaterinburg')
 
 def load_json(filename):
     with open(filename, encoding="utf-8") as infile:

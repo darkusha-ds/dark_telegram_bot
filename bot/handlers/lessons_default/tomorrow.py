@@ -1,16 +1,14 @@
 from aiogram import types
-from datetime import date as dt
 
 from loader import dp
 from keyboards.keyboard import *
 from utils.phrazes import *
 from utils.func import *
 
-
 @dp.message_handler(commands=tom)
 async def tomorrow(message: types.Message):
-    today = dt.today().weekday()
-    week_now = dt.today().isocalendar().week
+    today = dt.now(curr_time).weekday()
+    week_now = dt.now(curr_time).isocalendar().week
     yesterday = today - 1
     tomorrow = today + 1
  
